@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Customers and Transactions List</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Retailer Coding challenge</h1>
+    
+    <br>
+    <br>
+
+	<h3>Customer and his Transactions List By Id</h3>
+	<hr>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Customer-id</th>
+				<th>Transaction for month-1</th>
+				<th>Transaction for month-2</th>
+				<th>Transaction for month-3</th>
+				<th>Reward</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="forEachCustomer : ${customers}">
+			
+	            <td th:text="${forEachCustomer.id}" />		
+				<td th:text="${forEachCustomer.firstMonthTransaction}" />	
+				<td th:text="${forEachCustomer.secondMonthTransaction}" />	
+				<td th:text="${forEachCustomer.thirdMonthTransaction}" />
+				<td th:text="${forEachCustomer.reward}" />	
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+</body>
+</html>
+
+
+
